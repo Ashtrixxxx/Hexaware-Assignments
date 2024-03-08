@@ -133,6 +133,25 @@ update Customer set PhoneNumber='7708564866' where CustomerID=11;
 Delete from Customer where CustomerID=11;
 
 
+/*• IVehicleService:
+• GetVehicleById(vehicleId)
+• GetAvailableVehicles()
+• AddVehicle(vehicleData)
+• UpdateVehicle(vehicleData)
+• RemoveVehicle(vehicleId)
+*/
+select * from VEHICLE
+
+select * from VEHICLE where VehicleID=1;
+
+select * from VEHICLE where Availability=1;
+
+Insert INTO VEHICLE values(11,'GT350','FORD SHELBY',2022,'BLACK',333423,0,150)
+
+update VEHICLE set Availability = 1 where VehicleID=11;
+
+delete from VEHICLE where VehicleID=11
+
 /*
 • IReservationService:
 • GetReservationById(reservationId)
