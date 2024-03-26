@@ -24,8 +24,15 @@ namespace BankAssignment.Repository
 
         public IBankProviderImp()
         {
-            cmd = new SqlCommand();
-            sql = new SqlConnection(DbUtil.GetConnection());
+            try
+            {
+                sql = new SqlConnection(DbUtil.GetConnection());
+                cmd = new SqlCommand();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message + "The server is currently Not available.Please try again later");
+            }
         }
 
         public override void CalculateInterest( string id)

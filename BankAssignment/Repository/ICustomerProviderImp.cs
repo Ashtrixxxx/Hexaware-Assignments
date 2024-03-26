@@ -18,8 +18,15 @@ namespace BankAssignment.Repository
         CurrentAccount current = new CurrentAccount();
         ZeroBalance zero = new ZeroBalance();
         public ICustomerProviderImp() {
-            sql = new SqlConnection(DbUtil.GetConnection());
-            cmd = new SqlCommand();
+            try
+            {
+                sql = new SqlConnection(DbUtil.GetConnection());
+                cmd = new SqlCommand();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.Message + "The server is currently Not available.Please try again later");
+            }
 
         }
 
